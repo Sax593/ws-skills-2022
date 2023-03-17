@@ -7,7 +7,13 @@
 ## 🎓 J'ai compris et je peux expliquer
 
 - l'état (_state_) pour contrôler l'affichage d'un composant ✔️
+    `Utilisation d'un hook qui se nomme useState, doit être importer depuis react et est utiliser dans l'objectif de stocké des informations.
+    ex: const [users, setUsers] = useState([]);
+    Dans cette exemple users est la varible qui va être utiliser pour afficher les datas. le setUsers quand a lui va permettre de moidifier le state.`
 - les composants enfants et les _props_ qu'on leur passe ✔️
+    `Les props sont des informations que l'on va paser d'un composant parent a un composant enfants. Les props peuvent être utiliser par l'enfant et modifier 
+    celui-ci puis le faire remonter au parent.
+    ex: <UserCard data={users} />`
 - le déclenchement d'instructions en fonction des actions de l'utilisateur ✔️
 - le déclenchement d'instructions en fonction de l'étape du cycle de vie du composant ou du changement de valeur de ses props ✔️
 - l'usage d'un reducer (_useReducer_) pour gérer un état composé dans un composant
