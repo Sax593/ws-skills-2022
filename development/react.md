@@ -15,7 +15,50 @@
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
+
+```
+importer des PropTypes à partir de « prop-types »;
+import « ./style.scss »;
+import { Link } depuis « react-router-dom »;
+importer ProgressBar à partir de « @components/ProgressBar/ProgressBar » ;
+import { useEffect, useState } depuis « react »;
+Importer Axios depuis « Axios » ;
+
+exporter la fonction par défaut SuggestCardToForm({ suggestData }) {
+  const [compteur, setCounter] = useState([]);
+  useEffet(() => {
+    Axios
+      . Avoir(
+        '${import. méta. env. VITE_BACKEND_URL}/suggests/countcomments/${
+  suggestData. id
+        }`
+      )
+      . then(({ data }) => {
+        setCounter(données);
+      });
+  }, []);
+  rendre (
+    <Lien vers={'/suggestform/${suggestData. id}'} className="suggestBlock »>
+      <article className="carte »>
+        <h2 className="titleCard">{suggestData. titre}</h2>
+        <ProgressBar priority={suggestData. priorité} />
+        <div className="footerCard »>
+          <p className="opinion">Opinions({counter. comptage})</p>
+        </Div>
+      </article>
+    </Lien>
+  );
+}
+
+SuggestCardToForm. propTypes = {
+  suggestData : PropTypes. forme({
+    titre : PropTypes. chaîne. isRequired,
+    id : PropTypes. nombre. isRequired,
+    priorité : PropTypes. nombre. isRequired,
+  }). isRequired,
+};
+```
 
 ### Utilisation dans un projet  ✔️
 
