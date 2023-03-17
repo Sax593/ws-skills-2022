@@ -6,9 +6,9 @@
 
 ## 🎓 J'ai compris et je peux expliquer
 
-- les `structures` de base du langage ❌ / ✔️
-- les normes `ecmascript` ❌ / ✔️
-- l'utilisation de l'`asynchrone` ❌ / ✔️
+- les `structures` de base du langage ✔️
+- les normes `ecmascript` ✔️
+- l'utilisation de l'`asynchrone` ✔️
 - les spécifités du mot-clef `this` ❌ / ✔️
 
 ## 💻 Je code en Javascript
@@ -16,16 +16,20 @@
 ### Un exemple de code commenté ❌ / ✔️
 
 ```javascript
-(e) => mc2;
+users.map((element)=>{
+return(
+<Card data={element} />
+);
+})
 ```
 
-### Utilisation dans un projet ❌ / ✔️
+### Utilisation dans un projet ✔️
 
-[lien github](...)
+[[lien github](...)](https://github.com/Sax593/wildBookP1)
 
-Description :
+Description : Projet trombinoscope d'une promo de wilder.
 
-### J'ai utilisé ce langage en production ❌ / ✔️
+### J'ai utilisé ce langage en production ❌
 
 [lien du projet](...)
 
@@ -33,7 +37,7 @@ Description :
 
 ### J'ai utilisé ce langage en environement professionnel ❌ / ✔️
 
-Description :
+Description : Utililser pendant ma formation en dévellopent web au sein de la wild code school. Dans l'objectif de manipuler le DOM et rendre mon site dinamyque.
 
 ## 🌐 J'utilise des ressources
 
