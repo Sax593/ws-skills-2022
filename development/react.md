@@ -18,45 +18,45 @@
 ### Un exemple personnel commenté ✔️
 
 ```
-importer des PropTypes à partir de « prop-types »;
-import « ./style.scss »;
-import { Link } depuis « react-router-dom »;
-importer ProgressBar à partir de « @components/ProgressBar/ProgressBar » ;
-import { useEffect, useState } depuis « react »;
-Importer Axios depuis « Axios » ;
+import PropTypes from "prop-types";
+import "./style.scss";
+import { Link } from "react-router-dom";
+import ProgressBar from "@components/ProgressBar/ProgressBar";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-exporter la fonction par défaut SuggestCardToForm({ suggestData }) {
-  const [compteur, setCounter] = useState([]);
-  useEffet(() => {
-    Axios
-      . Avoir(
-        '${import. méta. env. VITE_BACKEND_URL}/suggests/countcomments/${
-  suggestData. id
+export default function SuggestCardToForm({ suggestData }) {
+  const [counter, setCounter] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL}/suggests/countcomments/${
+          suggestData.id
         }`
       )
-      . then(({ data }) => {
-        setCounter(données);
+      .then(({ data }) => {
+        setCounter(data);
       });
   }, []);
-  rendre (
-    <Lien vers={'/suggestform/${suggestData. id}'} className="suggestBlock »>
-      <article className="carte »>
-        <h2 className="titleCard">{suggestData. titre}</h2>
-        <ProgressBar priority={suggestData. priorité} />
-        <div className="footerCard »>
-          <p className="opinion">Opinions({counter. comptage})</p>
-        </Div>
+  return (
+    <Link to={`/suggestform/${suggestData.id}`} className="suggestBlock">
+      <article className="card">
+        <h2 className="titleCard">{suggestData.title}</h2>
+        <ProgressBar priority={suggestData.priority} />
+        <div className="footerCard">
+          <p className="opinion">Opinions({counter.count})</p>
+        </div>
       </article>
-    </Lien>
+    </Link>
   );
 }
 
-SuggestCardToForm. propTypes = {
-  suggestData : PropTypes. forme({
-    titre : PropTypes. chaîne. isRequired,
-    id : PropTypes. nombre. isRequired,
-    priorité : PropTypes. nombre. isRequired,
-  }). isRequired,
+SuggestCardToForm.propTypes = {
+  suggestData: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    priority: PropTypes.number.isRequired,
+  }).isRequired,
 };
 ```
 
